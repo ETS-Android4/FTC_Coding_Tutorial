@@ -17,8 +17,18 @@ public class ServoDemo extends LinearOpMode {
         telemetry.update();
         waitForStart();
 
-        while (true) {
-            robot.Servo1.setPower(1);
-        }
+        telemetry.addData(">", "start servo in half second");
+        telemetry.update();
+        sleep(500);
+
+        robot.Servo1.setPower(1);
+
+        telemetry.addData(">", "run for 2 seconds");
+        telemetry.update();
+        sleep(2000);
+
+        robot.Servo1.setPower(0);
+        telemetry.addData(">", "stop servo");
+        telemetry.update();
     }
 }
